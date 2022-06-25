@@ -6,12 +6,12 @@ public class Program {
         int num = 0;
         try {
             num = sc.nextInt();
-            if (num < 0) {
+            if (num < 2) {
                 throw new IllegalArgumentException();
             }
         } catch (Exception e) {
             System.err.println("IllegalArgument");
-            return;
+            System.exit(-1);
         }
         boolean flag = true;
         int i = 2;
