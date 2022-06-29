@@ -11,6 +11,7 @@ public class Program {
                 System.out.println(str);
                 return;
             }
+
             //дописать проверку на номер недели
             str.append(strOfWeek).append(" ");
 
