@@ -27,6 +27,7 @@ public class Program {
         StringBuilder result = new StringBuilder();
         //дописать проверку на количество значений
         //проверку на величину каждого значения не более 9
+        result.append(" ");
         values.useDelimiter(" ");
     	int min = values.nextInt();
     	//System.out.println(min);
