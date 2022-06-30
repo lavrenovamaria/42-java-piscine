@@ -27,21 +27,39 @@ public class Program {
         StringBuilder result = new StringBuilder();
         //дописать проверку на количество значений
         //проверку на величину каждого значения не более 9
-        result.append(" ");
-        values.useDelimiter(" ");
-    	int min = values.nextInt();
+        //values.append(" ");
+       // values.useDelimiter(" ");
+//     	int min = 10;
     	//System.out.println(min);
-    	while(values.hasNext()){
-			int num = values.nextInt();
-    		System.out.println("----> "+num);
-			if(num < min)
-				min = num;
-		}
-		System.out.println("<----> ");
-		for(int i = 0; i < min; ++i)
-            result.append("=");
+//     	while(values.hasNext()){
+// 			int num = values.nextInt();
+//     		System.out.println("----> "+num);
+// 			if(num < min)
+// 				min = num;
+// 		}
+// 		int num;
+// 		for (int i = 0; i < 5; ++i) {
+// 			if(i == 4)
+// 			{
+// 				System.out.println("lastElem --> ");
+// 				break;
+// 			}
+// 			else
+// 				num = values.nextInt();
+//
+// 			if (num < min)
+// 				min = num;
+// 			System.out.println("----> "+num);
+// 		}
+
+// 		System.out.println("<----> ");
+// 		for(int i = 0; i < min; ++i)
+//             result.append("=");
+// 		while(values.hasNext()){
+//         	System.out.println(values.next());
+//    		}
         result.append(">\n");
-        System.out.println("<<----> ");
+        //System.out.println("<<----> ");
 		return result.toString();
     }
 }
