@@ -1,3 +1,5 @@
+package day00.ex03;
+
 import java.util.Scanner;
 
 public class Program {
@@ -7,59 +9,44 @@ public class Program {
         for (int i = 1; i <= 18; ++i) {
             System.out.print("-> ");
             String strOfWeek = scan.nextLine();
-            if (strOfWeek.equals("42")) {
-                System.out.println(str);
-                return;
-            }
+            if (strOfWeek.equals("42"))
+                break ;
 
             //дописать проверку на номер недели
             str.append(strOfWeek).append(" ");
 
-           	System.out.print("-> ");
-           	//Scanner values = new Scanner(System.in);
-           	str.append(getMin(scan));
+            System.out.print("-> ");
+            str.append(getArrow(scan.nextLine()));
         }
         scan.close();
         System.out.println(str);
     }
 
-    static String getMin(Scanner values){
-        StringBuilder result = new StringBuilder();
-        //дописать проверку на количество значений
-        //проверку на величину каждого значения не более 9
-        //values.append(" ");
-       // values.useDelimiter(" ");
-//     	int min = 10;
-    	//System.out.println(min);
-//     	while(values.hasNext()){
-// 			int num = values.nextInt();
-//     		System.out.println("----> "+num);
-// 			if(num < min)
-// 				min = num;
-// 		}
-// 		int num;
-// 		for (int i = 0; i < 5; ++i) {
-// 			if(i == 4)
-// 			{
-// 				System.out.println("lastElem --> ");
-// 				break;
-// 			}
-// 			else
-// 				num = values.nextInt();
-//
-// 			if (num < min)
-// 				min = num;
-// 			System.out.println("----> "+num);
-// 		}
+    static String getArrow(String str){
+        //дописать проверку на пустую строку str.isEmpty();
+        int iStart = 0;
+        int iEnd = 0;
+        int min = 10;
+        int num;
 
-// 		System.out.println("<----> ");
-// 		for(int i = 0; i < min; ++i)
-//             result.append("=");
-// 		while(values.hasNext()){
-//         	System.out.println(values.next());
-//    		}
+        while (iEnd != -1)          //дописать проверку на количество значений == 5
+        {
+            iEnd = str.indexOf(' ', iStart);
+            //дописать проверку на iEnd == -1
+            if (iEnd == -1)
+                num = Integer.parseInt(str.substring(iStart));          //дописать проверку на num == -1
+            else
+                num = Integer.parseInt(str.substring(iStart, iEnd));    //дописать проверку на num == -1
+            //проверку на величину каждого значения не более 9
+            if (num < min)
+                min = num;
+            iStart = iEnd + 1;
+        }
+        StringBuilder result = new StringBuilder();
+ 		for(int i = 0; i < min; ++i)
+             result.append("=");
         result.append(">\n");
-        //System.out.println("<<----> ");
-		return result.toString();
+        return result.toString();
     }
 }
+Footer
