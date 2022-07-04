@@ -1,5 +1,3 @@
-package day00.ex03;
-
 import java.util.Scanner;
 
 public class Program {
@@ -10,11 +8,12 @@ public class Program {
             System.out.print("-> ");
             String strOfWeek = scan.nextLine();
             if (strOfWeek.equals("42"))
-                break ;
-
-            //дописать проверку на номер недели
+                break;
+            if (!strOfWeek.equals("Week " + i)) {
+				System.err.println("IllegalArgument");
+				return;
+			}
             str.append(strOfWeek).append(" ");
-
             System.out.print("-> ");
             str.append(getArrow(scan.nextLine()));
         }
@@ -49,4 +48,3 @@ public class Program {
         return result.toString();
     }
 }
-Footer
