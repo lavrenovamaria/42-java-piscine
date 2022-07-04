@@ -37,8 +37,8 @@ public class Program {
             else
                 num = Integer.parseInt(str.substring(iStart, iEnd));    //дописать проверку на num == -1
             //проверку на величину каждого значения не более 9
-			for(int i = 5; num < min; min = num)
-				continue;
+            if (num < min)
+                min = num;
             iStart = iEnd + 1;
         }
         StringBuilder result = new StringBuilder();
